@@ -1,0 +1,10 @@
+Data Profiling Report
+
+1. There are no null values so their handling can be skipped. Imputation would have be required in case of missing values
+2. Fields Location, Locdesc and fiscal year has only one value. So, they can be used as meta data rather than in analysis.
+3. Fiscal Season and SeasonDesc represents same data in different format. So one of them can be deleted
+4. Class desc has less unique values than Class. So, we can conclude that multiple classes have same descriptions.
+   If case was opposite we could argue same class has multiple description which could also be due to typo
+5. Class field is drop only ClassDesc is used since it has more unique values and data won't be lost
+6. Fiscal week and Day are date type data values and loading them as date will help on doing time related analysis
+7. Data can be treated as time-series data representing daily transactions. So, loading day or Fiscal week as index helps in time series analysis
